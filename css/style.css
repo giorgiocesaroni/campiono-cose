@@ -151,7 +151,8 @@ nav .menu a:hover {
 }
 
 header {
-  margin: .75rem;
+  padding: .75rem;
+  margin-bottom: -.75rem;
   background-color: white;
 }
 
@@ -210,57 +211,22 @@ header h1 {
 .sampler {
   border: 1px solid #000;
   width: 100%;
-  height: 500px;
+  height: 100vh;
 }
 
 .page1 {
   display: grid;
-  grid-template-rows: 300px 175px 1fr 50px;
-  grid-template-columns: .25fr 1fr .25fr 1fr .25fr;
-  grid-template-areas: "header header header header header" ". . . . ." ". contentLeft . contentRight ." ". . . . .";
-}
-
-.page1 .section1 {
-  position: relative;
-  grid-area: contentLeft;
-  align-self: center;
-  justify-self: center;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  border-bottom: 2rem solid white;
-}
-
-.page1 .section1 h3 {
-  color: #1a23fb;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
 }
 
 .page1 .section2 {
-  position: relative;
-  grid-area: contentRight;
-  align-self: flex-start;
-  justify-self: center;
-  padding: 2rem 1.5rem;
-  color: white;
-  background-color: #1a23fb;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  border-bottom: 2rem solid #2cfefe;
+  margin: 4rem;
 }
 
-.page1 .section2 h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.page1 .section2 .hand {
-  position: absolute;
-  z-index: -1;
-  width: 150px;
-  left: 0;
-  top: 0;
-  transform: translateX(-75%) translateY(-50%) rotate(10deg);
+.page1 .hand {
+  display: none;
 }
 
 /* PAGE 2 */

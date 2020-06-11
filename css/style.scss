@@ -14,22 +14,22 @@
 /* FONTS */
 @font-face {
   font-family: "agrandir";
-  src: url(/fonts/Agrandir/OTF/Agrandir-GrandHeavy.otf) format("opentype");
-  src: url(/fonts/Agrandir/TTF/Agrandir-GrandHeavy.ttf) format("truetype");
+  src: url(../fonts/Agrandir/OTF/Agrandir-GrandHeavy.otf) format("opentype");
+  src: url(../fonts/Agrandir/TTF/Agrandir-GrandHeavy.ttf) format("truetype");
   font-weight: 900;
 }
 
 @font-face {
   font-family: "agrandir";
-  src: url(/fonts/Agrandir/OTF/Agrandir-Medium.otf) format("opentype");
-  src: url(/fonts/Agrandir/TTF/Agrandir-Medium.ttf) format("truetype");
+  src: url(../fonts/Agrandir/OTF/Agrandir-Medium.otf) format("opentype");
+  src: url(../fonts/Agrandir/TTF/Agrandir-Medium.ttf) format("truetype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "agrandir";
-  src: url(/fonts/Agrandir/OTF/Agrandir-WideLight.otf) format("opentype");
-  src: url(/fonts/Agrandir/TTF/Agrandir-WideLight.ttf) format("truetype");
+  src: url(../fonts/Agrandir/OTF/Agrandir-WideLight.otf) format("opentype");
+  src: url(../fonts/Agrandir/TTF/Agrandir-WideLight.ttf) format("truetype");
   font-weight: 200;
 }
 
@@ -169,7 +169,8 @@ nav .menu {
 
 // HEADER
 header {
-  margin: .75rem;
+  padding: .75rem;
+  margin-bottom: -.75rem;
   background-color: white;
 
   h1 {
@@ -230,60 +231,22 @@ header {
 .sampler {
   border: 1px solid #000;
   width: 100%;
-  height: 500px;
+  height: 100vh;
 }
 
+// PAGE 1
 .page1 {
   display: grid;
-  grid-template-rows: 300px 175px 1fr 50px;
-  grid-template-columns: .25fr 1fr .25fr 1fr .25fr;
-  grid-template-areas:
-    "header header header header header"
-    ". . . . ."
-    ". contentLeft . contentRight ."
-    ". . . . .";
-
-  .section1 {
-    position: relative;
-    grid-area: contentLeft;
-    align-self: center;
-    justify-self: center;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    border-bottom: 2rem solid white;
-
-    h3 {
-      color: #1a23fb;
-    }
-  }
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
 
   .section2 {
-    position: relative;
-    grid-area: contentRight;
-    align-self: flex-start;
-    justify-self: center;
-    padding: 2rem 1.5rem;
-    color: white;
-    background-color: #1a23fb;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    border-bottom: 2rem solid #2cfefe;
+    margin: 4rem;
+  }
 
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hand {
-      position: absolute;
-      z-index: -1;
-      width: 150px;
-      left: 0;
-      top: 0;
-      transform: translateX(-75%) translateY(-50%) rotate(10deg);
-    }
+  .hand {
+    display: none;
   }
 }
 
