@@ -14,22 +14,22 @@
 /* FONTS */
 @font-face {
   font-family: "agrandir";
-  src: url(/fonts/Agrandir/OTF/Agrandir-GrandHeavy.otf) format("opentype");
-  src: url(/fonts/Agrandir/TTF/Agrandir-GrandHeavy.ttf) format("truetype");
+  src: url(../fonts/Agrandir/OTF/Agrandir-GrandHeavy.otf) format("opentype");
+  src: url(../fonts/Agrandir/TTF/Agrandir-GrandHeavy.ttf) format("truetype");
   font-weight: 900;
 }
 
 @font-face {
   font-family: "agrandir";
-  src: url(/fonts/Agrandir/OTF/Agrandir-Medium.otf) format("opentype");
-  src: url(/fonts/Agrandir/TTF/Agrandir-Medium.ttf) format("truetype");
+  src: url(../fonts/Agrandir/OTF/Agrandir-Medium.otf) format("opentype");
+  src: url(../fonts/Agrandir/TTF/Agrandir-Medium.ttf) format("truetype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "agrandir";
-  src: url(/fonts/Agrandir/OTF/Agrandir-WideLight.otf) format("opentype");
-  src: url(/fonts/Agrandir/TTF/Agrandir-WideLight.ttf) format("truetype");
+  src: url(../fonts/Agrandir/OTF/Agrandir-WideLight.otf) format("opentype");
+  src: url(../fonts/Agrandir/TTF/Agrandir-WideLight.ttf) format("truetype");
   font-weight: 200;
 }
 
