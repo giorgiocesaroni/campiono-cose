@@ -1,3 +1,14 @@
+// State management
+class State {
+  constructor(state, data) {
+    this.state = state;
+    this.uploadCount = 0;
+    this.sessionTime = new Date();
+    this.error = data
+  }
+}
+
+// Methods
 function exit(e) {
   if (e.state == "success") {
     videos.classList.remove("uploadingState");
@@ -154,14 +165,15 @@ function gotStream(stream) {
   videoElement.srcObject = stream;
   window.recorder = new MediaRecorder(stream, {
     audioBitsPerSecond: 128000,
-    videoBitsPerSecond: 2500000,
+    videoBitsPerSecond: 3500000,
     mimeType: "video/webm",
   });
   return navigator.mediaDevices.enumerateDevices();
 }
 
 function handleErrors(e) {
-  console.log(e);
+  state = new State('error', e);
+  console.log(state.error);
   let displayError = document.getElementById("displayError");
   let txtError = document.getElementById("txtError");
   displayError.classList.remove("hide");
@@ -173,6 +185,7 @@ function handleErrors(e) {
   if (e == "BrowserError") {
     txtError.innerHTML = `Ci dispiace, per ora il tuo browser non è supportato. Ti preghiamo di utilizzare Chrome su desktop.`;
   }
+
 }
 
 function start(source) {
@@ -228,6 +241,8 @@ function start(source) {
   } else {
     handleErrors("BrowserError");
   }
+
+  state.push(new State('active'));
 }
 
 // event listeners
@@ -243,7 +258,12 @@ let micSetup = document.getElementById("micSetup");
 let audioCtx;
 let ua = detect.parse(navigator.userAgent);
 let videos = document.getElementById("videos");
+let container = document.querySelector(".sampler-container")
 
+// State: app initializes on 'disabled'
+var state = [];
+
+// crossOrigin
 audio.crossOrigin = 'anonymous';
 
 audioDevices.addEventListener("click", (e) => {
@@ -278,4 +298,9 @@ btnMic.onclick = () => {
 
 document.addEventListener("visibilitychange", handleVisibilityChange);
 
-start();
+// Initializer
+container.onclick = () => {
+  if (state.length == 0) {
+    start();
+  }
+}
