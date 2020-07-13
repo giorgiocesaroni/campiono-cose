@@ -1,8 +1,13 @@
 # Campiono Cose
 ## To Do
 
+### Website
 - [x] Header
   - [x] Menu JS
-- [ ] Integrate sampler through modules
 - [ ] Info
 - [ ] Links
+
+### Sampler
+- [x] Integrate sampler through modules
+  - [ ] Fix play
+  - [ ] Beat selector

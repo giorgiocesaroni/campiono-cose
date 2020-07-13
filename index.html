@@ -8,11 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampionoCose</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/sampler.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="./favicon/site.webmanifest">
+    <script src="./src/detect.js"></script>
     <script src="./js/menu.js" defer="defer"></script>
+    <script src="./js/sampler.js" defer="defer"></script>
   </head>
   <body>
     <div class="container">
@@ -32,7 +35,63 @@
           </div><img class="one" src="img/mosaico-header2.png" alt=""><img class="two" src="img/mosaico-header.png" alt="">
         </div>
       </header>
-      <iframe class="sampler" src="https://georgecesar.github.io/campiono-cose-sampler/" title="Il Campionatore di CampionoCose" scrolling="no"></iframe>
+      <div class="sampler-container">
+        <div class="displayError hide" id="displayError">
+          <p class="error" id="txtError"></p>
+        </div>
+        <div class="main">
+          <div class="sampler">   
+            <div class="videos" id="videos">
+              <video id="liveVideo" muted="true" playsinline="" autoplay=""></video>
+              <video class="hide" id="storedVideo" type="video/webm" playsinline="">
+                <audio id="audio" controls="" preload="auto">
+                  <source src="idea1.mp3" type="audio/mpeg">
+                </audio>
+              </video>
+              <div class="mic-setup hidden" id="micSetup">
+                <div class="selection">Seleziona Microfono</div>
+                <div id="devices">
+                  <!-- where the devices go-->
+                </div>
+              </div><img class="mic-icon half-opacity" id="btnMic" src="icns/mic-icon.svg" alt="Microphone choice icon">
+            </div>
+            <div id="buttons">
+              <div class="row1">   
+                <button id="btnPlay"><img src="icns/play.png" width="32" alt=""></button>
+                <button id="btnRecord"><img src="icns/rec.png" width="50" alt=""></button>
+                <button id="btnStop"><img src="icns/stop.png" width="32" alt=""></button>
+              </div>
+              <div class="row2">
+                <button id="btnUpload"><img src="icns/5_info.png" width="32" alt=""></button>
+              </div>
+            </div>
+          </div>
+          <div class="tutorial">
+            <h2>Come funziona?</h2>
+            <h3>Realizzare il tuo brano<br>è semplice</h3>
+            <ul>
+              <li><img src="icns/1_info.png" width="30" alt="">
+                <p>utilizza le cuffie</p>
+              </li>
+              <li><img src="icns/2_info.png" width="30" alt="">
+                <p>per registrare</p>
+              </li>
+              <li><img src="icns/3_info.png" width="30" alt="">
+                <p>per interrompere</p>
+              </li>
+              <li><img src="icns/4_info.png" width="30" alt="">
+                <p>per riprodurre</p>
+              </li>
+              <li><img src="icns/5_info.png" width="30" alt="">
+                <p>per inviare</p>
+              </li>
+            </ul>
+            <h1>Campiono<br>Cose
+              <span class="beta">beta</span>           
+            </h1>
+          </div>
+        </div>
+      </div>
       <main class="page1" id="home">
         <div class="section1">
           <h1>@CAM<br>PIONO<br>COSE</h1>
@@ -123,5 +182,19 @@
         </div>
       </footer>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-storage.js"></script>
+    <script>
+      const firebaseConfig = {
+      apiKey: "AIzaSyB20JkgE79fyOdRR_zIT_1L_eOmqs8RVvU",
+      authDomain: "campionocose-e451b.firebaseapp.com",
+      databaseURL: "https://campionocose-e451b.firebaseio.com",
+      projectId: "campionocose-e451b",
+      storageBucket: "campionocose-e451b.appspot.com",
+      messagingSenderId: "480584053041",
+      appId: "1:480584053041:web:91302629c8db6a78f70010"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
   </body>
 </html>

@@ -1,0 +1,213 @@
+.sampler-container {
+  background-color: #1a23fb;
+  margin: 0 auto;
+  color: white;
+  padding: 2.5rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.sampler-container .main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+  justify-items: center;
+  align-items: center;
+}
+.sampler-container .displayError {
+  width: 312px;
+  margin-bottom: 2.5rem;
+}
+.sampler-container .displayError .error {
+  text-align: center;
+  font-weight: 400;
+  color: white;
+}
+.sampler-container .sampler {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: #171edb;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 2.5rem;
+}
+.sampler-container .tutorial {
+  display: flex;
+  flex-flow: column;
+}
+.sampler-container .tutorial h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #fc29fc;
+}
+.sampler-container .tutorial h1 span {
+  text-transform: none;
+  color: #e3e2fb;
+}
+.sampler-container .tutorial ul {
+  margin-bottom: 2rem;
+}
+.sampler-container .tutorial ul li {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  color: #e3e2fb;
+}
+.sampler-container .tutorial ul li p {
+  margin-left: 0.5rem;
+}
+.sampler-container .mic-setup {
+  position: absolute;
+  color: white;
+  background-color: rgba(23, 30, 219, 0.5);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.32s ease;
+}
+.sampler-container .mic-setup .selection {
+  width: 90%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  margin: 0.75rem;
+  font-size: 1.25rem;
+  font-variation-settings: "wght" 700, "wdth" 150;
+}
+.sampler-container .mic-setup #devices {
+  width: 90%;
+  text-align: left;
+}
+.sampler-container .mic-icon {
+  position: absolute;
+  width: 1.5rem;
+  bottom: 0;
+  right: 0;
+  margin: 0.5rem;
+  transition: opacity 0.32s ease;
+}
+.sampler-container .hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.sampler-container .half-opacity {
+  opacity: 0.65;
+}
+.sampler-container #buttons {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 1.5rem;
+}
+.sampler-container #buttons button {
+  border: 0;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+.sampler-container #buttons button:focus {
+  outline: none;
+}
+.sampler-container #buttons button img {
+  pointer-events: none;
+}
+.sampler-container #buttons .row1 {
+  display: flex;
+  flex-flow: row;
+}
+.sampler-container #buttons .row2 {
+  align-self: center;
+}
+.sampler-container .hide {
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
+}
+.sampler-container .videos {
+  z-index: 1;
+  position: relative;
+  display: grid;
+  flex-flow: column;
+  align-items: center;
+  height: 75vw;
+  max-height: 300px;
+  width: 60vw;
+  max-width: 240px;
+  margin-bottom: 1.5rem;
+  border: 3px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+.sampler-container .recordingState {
+  animation: recording 1.5s infinite ease;
+}
+@keyframes recording {
+  0% {
+    border: 3px solid #eee;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    border: 3px solid #f00;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    border: 3px solid #eee;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+.sampler-container .playingState {
+  animation: playing 2s infinite ease;
+}
+@keyframes playing {
+  0% {
+    border: 3px solid #eee;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    border: 3px solid #0f0;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    border: 3px solid #eee;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+.sampler-container .uploadingState {
+  animation: uploading 2s infinite ease;
+}
+@keyframes uploading {
+  0% {
+    border: 3px solid #eee;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    border: 3px solid #8787ff;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    border: 3px solid #eee;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+.sampler-container #liveVideo,
+.sampler-container #storedVideo {
+  grid-row: 1;
+  grid-column: 1;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.25s ease;
+}
+.sampler-container #liveVideo {
+  z-index: -2;
+}
+.sampler-container #storedVideo {
+  z-index: -1;
+}
+
+/*# sourceMappingURL=sampler.css.map */
