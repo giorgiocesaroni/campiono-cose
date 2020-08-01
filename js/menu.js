@@ -1,17 +1,13 @@
 let header = document.querySelector('.top');
 let hamburger = document.querySelector('.hamburger');
+let menu = document.querySelector('#menu')
 
 hamburger.addEventListener('click', (e) => {
   header.classList.toggle('extended');
+  document.body.classList.toggle('modal-open');
 })
 
-// links.forEach((e) => {
-//   e.addEventListener('click', () => {
-//     menu.classList.toggle('full-screen');
-//   })
-// })
-
-// play.addEventListener('click', () => {
-//   ytVideo.classList.remove('hide');
-//   console.log('hello');
-// })
+menu.addEventListener('click', (e) => {
+  header.classList.remove('extended');
+  document.body.classList.remove('modal-open');
+})

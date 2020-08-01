@@ -9,6 +9,7 @@
 }
 .sampler-container .main {
   width: 100%;
+  max-width: 740px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
   justify-items: center;
@@ -48,7 +49,7 @@
   color: #e3e2fb;
 }
 .sampler-container .tutorial ul {
-  margin-bottom: 2rem;
+  margin: .5rem 0 1rem 0;
 }
 .sampler-container .tutorial ul li {
   display: flex;

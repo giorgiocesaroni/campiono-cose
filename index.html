@@ -1,200 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Il website di Campiono Cose">
-    <meta name="keywords" content="Campiono, Cose, Casa">
-    <meta name="author" content="Francesca De Caro, Giorgio Cesaroni">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampionoCose</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/sampler.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/site.webmanifest">
-    <script src="./src/detect.js"></script>
-    <script src="./js/menu.js" defer="defer"></script>
-    <script src="./js/sampler.js" defer="defer"></script>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <div class="top">
-          <h1>c</h1>
-          <div class="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <ul><a href="http://" target="_blank">Instagram</a><a href="http://georgecesar.github.io/campiono-cose-sampler/" target="_blank">Campionatore</a><a href="#" target="_blank">Contattaci</a></ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Il website di Campiono Cose">
+  <meta name="keywords" content="Campiono, Cose, Casa">
+  <meta name="author" content="Francesca De Caro, Giorgio Cesaroni">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/sampler.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest">
+  <title>CampionoCose</title>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-storage.js"></script>
+  <script src="./src/detect.js"></script>
+  <script src="./js/menu.js" defer></script>
+  <script src="./js/sampler.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="top">
+        <h1>c</h1>
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
         </div>
-        <div class="bottom">
-          <div class="center">
-            <h1>Campiono<br>Cose</h1><a class="link" href="http://www.instagram.com/campionocose" target="_blank">Scopri di più</a>
-          </div><img class="one" src="img/mosaico-header2.png" alt=""><img class="two" src="img/mosaico-header.png" alt="">
-        </div>
-      </header>
-      <div class="sampler-container">
-        <div class="displayError hide" id="displayError">
-          <p class="error" id="txtError"></p>
-        </div>
-        <div class="main">
-          <div class="sampler">   
-            <div class="videos" id="videos">
-              <video id="liveVideo" muted="true" playsinline="" autoplay=""></video>
-              <video class="hide" id="storedVideo" type="video/webm" playsinline="">
-                <audio id="audio" controls="" preload="auto">
-                  <source src="idea1.mp3" type="audio/mpeg">
-                </audio>
-              </video>
-              <div class="mic-setup hidden" id="micSetup">
-                <div class="selection">Seleziona Microfono</div>
-                <div id="devices">
-                  <!-- where the devices go-->
-                </div>
-              </div><img class="mic-icon half-opacity" id="btnMic" src="icns/mic-icon.svg" alt="Microphone choice icon">
-            </div>
-            <div id="buttons">
-              <div class="row1">   
-                <button id="btnPlay"><img src="icns/play.png" width="32" alt=""></button>
-                <button id="btnRecord"><img src="icns/rec.png" width="50" alt=""></button>
-                <button id="btnStop"><img src="icns/stop.png" width="32" alt=""></button>
+        <ul id="menu"><a href="https://www.instagram.com/campionocose/" target="_blank">Instagram</a><a href="#sampler">Campionatore</a><a href="#contacts">Contattaci</a></ul>
+      </div>
+      <div class="bottom">
+        <div class="center">
+          <h1>Campiono<br>Cose</h1>
+        </div><img class="one" src="img/mosaico-header2.png" alt=""><img class="two" src="img/mosaico-header.png" alt="">
+      </div>
+    </header>
+    <main class="page welcome">   
+      <h2>Creiamo musica coi tuoi suoni, campionandoli e usandoli come strumenti musicali. Scopri come.</h2>
+    </main>
+    <main class="page">
+      <div>
+        <h3>partecipa</h3>
+        <p>Cerca suoni intorno a te, registrali con una storia Instagram taggando @campionocose. Oppure vivi l'esperienza del nostro<a href="#sampler"> campionatore.</a></p>
+      </div>
+      <div class="story">
+        <h2>story</h2>
+        <h2>story</h2>
+        <h2>story</h2><a href="">invia su instagram</a>
+      </div>
+    </main>
+    <main class="sampler-container" id="sampler">
+      <div class="displayError hide" id="displayError">
+        <p class="error" id="txtError"></p>
+      </div>
+      <div class="main">
+        <div class="sampler">
+          <div class="videos" id="videos">
+            <video id="liveVideo" muted="true" playsinline="" autoplay=""></video>
+            <video class="hide" id="storedVideo" type="video/webm" playsinline="">
+              <audio id="audio" controls="" preload="auto">
+                <source src="idea1.mp3" type="audio/mpeg">
+              </audio>
+            </video>
+            <div class="mic-setup hidden" id="micSetup">
+              <div class="selection">Seleziona Microfono</div>
+              <div id="devices">
+                <!-- where the devices go-->
               </div>
-              <div class="row2">
-                <button id="btnUpload"><img src="icns/5_info.png" width="32" alt=""></button>
-              </div>
+            </div><img class="mic-icon half-opacity" id="btnMic" src="icns/mic-icon.svg" alt="Microphone choice icon">
+          </div>
+          <div id="buttons">
+            <div class="row1">
+              <button id="btnPlay"><img src="icns/play.png" width="32" alt=""></button>
+              <button id="btnRecord"><img src="icns/rec.png" width="50" alt=""></button>
+              <button id="btnStop"><img src="icns/stop.png" width="32" alt=""></button>
+            </div>
+            <div class="row2">
+              <button id="btnUpload"><img src="icns/5_info.png" width="32" alt=""></button>
             </div>
           </div>
-          <div class="tutorial">
-            <h2>Come funziona?</h2>
-            <h3>Realizzare il tuo brano<br>è semplice</h3>
-            <ul>
-              <li><img src="icns/1_info.png" width="30" alt="">
-                <p>utilizza le cuffie</p>
-              </li>
-              <li><img src="icns/2_info.png" width="30" alt="">
-                <p>per registrare</p>
-              </li>
-              <li><img src="icns/3_info.png" width="30" alt="">
-                <p>per interrompere</p>
-              </li>
-              <li><img src="icns/4_info.png" width="30" alt="">
-                <p>per riprodurre</p>
-              </li>
-              <li><img src="icns/5_info.png" width="30" alt="">
-                <p>per inviare</p>
-              </li>
-            </ul>
-            <h1>Campiono<br>Cose
-              <span class="beta">beta</span>           
-            </h1>
-          </div>
+        </div>
+        <div class="tutorial">
+          <h2>Come funziona?</h2>
+          <ul>
+            <li><img src="icns/1_info.png" width="30" alt="">
+              <p>utilizza le cuffie</p>
+            </li>
+            <li><img src="icns/2_info.png" width="30" alt="">
+              <p>per registrare</p>
+            </li>
+            <li><img src="icns/3_info.png" width="30" alt="">
+              <p>per interrompere</p>
+            </li>
+            <li><img src="icns/4_info.png" width="30" alt="">
+              <p>per riprodurre</p>
+            </li>
+            <li><img src="icns/5_info.png" width="30" alt="">
+              <p>per inviare</p>
+            </li>
+          </ul>
+          <h1>Campiono<br>Cose<span class="beta">beta</span></h1>
         </div>
       </div>
-      <main class="page1" id="home">
-        <div class="section1">
-          <h1>@CAM<br>PIONO<br>COSE</h1>
-        </div>
-        <div class="section2" id="what-we-do">
-          <h3>Partecipa</h3>
-          <p>Registra i suoni della tua quotidianità facendo una storia su Instagram taggando <a href="http://www.instagram.com/campionocose" target="_blank">@campionocose</a> o utilizzando<br><a href="https://georgecesar.github.io/MediaCaptureTest/index.html" target="_blank">il nostro campionatore</a></p><img class="hand" src="img/hand-div2.png" alt="A hand pointing at Campiono Cose's logo">
-        </div>
-      </main>
-      <main class="page2">
-        <div class="section1">
-          <h3>Ciao!</h3>
-          <p>Benvenuto nel nostro sito.<br>La nostra passione &egrave; produrre musica, e per farlo utilizziamo i suoni che
-                      riceviamo da voi. Trasformiamo in beats e canzoni i campioni che ci inviate, dando la possibilit&agrave; di produrre musica e diventare autore di brani a chiunque voglia partecipare.
-          </p>
-        </div>
-        <div class="section2">
-          <h1>180</h1>
-          <h1>130</h1>
-        </div>
-        <div class="section3">
-          <h1>#cam<br>          piono<br>          cose</h1>
-          <div class="bg"></div>
-        </div>
-        <div class="section4">
-          <h3>il brano</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cupiditate impedit dolor doloribus assumenda
-            eos possimus nihil illo unde obcaecati!<br><br>          Lorem ipsum ddolor sit amet consectetur adipisicing.
-          </p><img src="img/soundreef-logo.png" alt="Soundreef's logo">
-        </div>
-      </main>
-      <main class="video1" id="video">
-        <iframe class="yt-video hide" width="560" height="315" src="https://www.youtube.com/embed/oSRgmqJhTu8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
-        <div id="play">&#x25BA;</div>
-      </main>
-      <main class="page3" id="participate">
-        <div class="section1">
-          <h3>partecipa</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cupiditate impedit dolor doloribus assumenda
-            eos possimus nihil illo unde obcaecati!
-          </p>
-        </div>
-        <div class="section2">
-          <h2>story</h2>
-          <h2>story</h2>
-          <h2>story</h2>
-          <h2>story</h2>
-        </div><img class="hand-black" src="img/story-hand-black.png" alt="A hand pointing at Campiono Cose's Instagram story">
-        <div class="link">
-          <p>guarda su ig</p>
-        </div>
-      </main>
-      <main class="page4">
-        <div class="section1">
-          <h3>stampa</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cupiditate impedit dolor doloribus assumenda
-            eos possimus nihil illo unde obcaecati!<br><br>
-          </p><span class="quote">grazia / il mattino</span>
-        </div><img src="img/press.png" alt="A bucket of ink and a pen representing the press">
-      </main>
-      <main class="page5">
-        <div class="section1">
-          <h3>interviste</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cupiditate impedit dolor doloribus assumenda
-            eos possimus nihil illo unde obcaecati!<br><br>
-          </p><span class="quote">radio base</span>
-        </div><img src="img/on-air.png" alt="A picture of a microphone that says on air">
-      </main>
-      <main class="page6" id="about-us">
-        <h3 class="team">team</h3>
-        <div class="images">
-          <div class="firstRow"><a href="https://www.instagram.com/sandrohohner/" target="_blank"><img src="img/alessandro.jpg" alt="A picture of Alessandro Fontana" data-name="Alessandro Fontana"></a><a href="https://www.instagram.com/instadenardo/" target="_blank"><img src="img/gabriele.jpg" alt="A picture of Gabriele De Nardo"></a><a href="https://www.instagram.com/trecentosessantuno/" target="_blank"><img src="img/antonio.jpg" alt="A picture of Antonio Saporito"></a></div>
-          <div class="secondRow"><a href="https://www.instagram.com/ebast_/" target="_blank"><img src="img/francesca.jpg" alt="A picture of Francesca De Caro"></a><a href="https://www.instagram.com/georgecesarmusic/" target="_blank"><img src="img/giorgio.jpg" alt="A picture of Giorgio Cesaroni"></a></div>
-        </div>
-        <h3 class="contacts">contattaci </h3>
-      </main>
-      <footer>
-        <div class="top"><span><a href="https://www.instagram.com/campionocose/" target="_blank">@campionocose</a></span>
-          <div class="icons"><a href="https://www.instagram.com/campionocose/" target="_blank"><img class="ig" src="img/instagram-icon.png" alt="Instagram's logo"></a><a href="https://www.youtube.com/" target="_blank"><img class="yt" src="img/youtube-icon.png" alt="YouTube's logo"></a><a href="https://www.facebook.com/CampionoCose-110967697234070/" target="_blank"><img class="fb" src="img/facebook-icon.png" alt="Facebook's logo"></a></div><img class="hand" src="img/contact-hand.png" alt="A hand pointing at the social media links">
-        </div>
-        <div class="bot">
-          <div class="logo"><span>#C</span></div>
-          <div class="copyright"><span>2020 &copy campionocose.it</span></div>
-        </div>
-      </footer>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-storage.js"></script>
-    <script>
-      const firebaseConfig = {
-      apiKey: "AIzaSyB20JkgE79fyOdRR_zIT_1L_eOmqs8RVvU",
-      authDomain: "campionocose-e451b.firebaseapp.com",
-      databaseURL: "https://campionocose-e451b.firebaseio.com",
-      projectId: "campionocose-e451b",
-      storageBucket: "campionocose-e451b.appspot.com",
-      messagingSenderId: "480584053041",
-      appId: "1:480584053041:web:91302629c8db6a78f70010"
-      };
-      firebase.initializeApp(firebaseConfig);
-    </script>
-  </body>
-</html>
+    </main>
+    <main class="page"><img src="img/press.png" alt="A bucket of ink and a pen representing the press">
+      <div class="section">
+        <h3>stampa</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cupiditate impedit dolor doloribus assumenda
+          eos possimus nihil illo unde obcaecati!<br><br>
+        </p>
+        <div class="quote">grazia / il mattino</div>
+      </div>
+    </main>
+    <main class="page">
+      <div class="section">
+        <h3>interviste</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cupiditate impedit dolor doloribus assumenda
+          eos possimus nihil illo unde obcaecati!<br><br>
+        </p>
+        <div class="quote">radio base</div>
+      </div><img src="img/on-air.png" alt="A picture of a microphone that says on air">
+    </main>
+    <main class="page team">
+      <h1>Chi<br>Siamo</h1>
+      <div class="card"><img src="img/alessandro.jpg" alt="A picture of Alessandro Fontana">
+        <h2>Alessandro Fontana</h2><a href="https://www.instagram.com/sandrohohner/" target="_blank">
+          <p>@sandrohohner</p></a>
+      </div>
+      <div class="card"><img src="img/gabriele.jpg" alt="A picture of Gabriele De Nardo">
+        <h2>Gabriele De Nardo</h2><a href="https://www.instagram.com/instadenardo/" target="_blank">
+          <p>@instadenardo</p></a>
+      </div>
+      <div class="card"><img src="img/antonio.jpg" alt="A picture of Antonio Saporito">
+        <h2>Antonio Saporito</h2><a href="https://www.instagram.com/trecentosessantuno/" target="_blank">
+          <p>@trecentosessantuno</p></a>
+      </div>
+      <div class="card"><img src="img/francesca.jpg" alt="A picture of Francesca De Caro">
+        <h2>Francesca De Caro</h2><a href="https://www.instagram.com/ebast_/" target="_blank">
+          <p>@ebast_</p></a>
+      </div>
+      <div class="card"><img src="img/giorgio.jpg" alt="A picture of Giorgio Cesaroni">
+        <h2>Giorgio Cesaroni</h2><a href="https://www.instagram.com/georgecesarmusic/" target="_blank">
+          <p>@georgecesarmusic</p></a>
+      </div>
+    </main>
+    <footer>
+      <div class="row top">
+        <div class="icons"><a href="https://www.instagram.com/campionocose/" target="_blank"><img class="ig" src="img/instagram-icon.png" alt="Instagram's logo"></a><a href="https://www.facebook.com/CampionoCose-110967697234070/" target="_blank"><img class="fb" src="img/facebook-icon.png" alt="Facebook's logo"></a></div><a href="https://www.instagram.com/campionocose/" target="_blank"> 
+          <p>@campionocose</p></a><img class="hand" src="img/contact-hand.png" alt="A hand pointing at the social media links">
+      </div>
+      <div class="row bottom">
+        <p>#C</p>
+        <p>2020 &copy; campionocose.it</p>
+      </div>
+    </footer>
+  </div>
+</body>
