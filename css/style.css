@@ -30,6 +30,7 @@
 
 html, body {
   width: 100%;
+  min-width: 320px;
   height: 100%;
   font-family: "agrandir";
   color: #232323;
@@ -38,7 +39,6 @@ html, body {
 
 .container {
   max-width: 1024px;
-  min-width: 320px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -79,14 +79,16 @@ header .top {
   max-height: 45px;
   overflow-y: hidden;
   z-index: 10;
-  background-color: rgba(245, 245, 245, 0.75);
-  backdrop-filter: saturate(200) blur(20px);
-  -webkit-backdrop-filter: saturate(200) blur(20px);
+  background-color: rgba(245, 245, 245, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   display: flex;
   justify-content: space-between;
   transition: max-height 0.65s, background-color 0.65s;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.25);
 }
 header .top h1 {
+  mix-blend-mode: multiply;
   display: inline-block;
   text-transform: uppercase;
   color: #fc29fc;
@@ -94,6 +96,7 @@ header .top h1 {
   margin: 0 0 -0.6rem 0.4rem;
 }
 header .top .hamburger {
+  mix-blend-mode: multiply;
   max-height: 45px;
   cursor: pointer;
   padding: 0.25rem 0.75rem;
@@ -173,30 +176,6 @@ header .bottom .two {
   height: 9rem;
 }
 
-.page {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  justify-items: center;
-  align-items: center;
-  gap: 4em;
-  padding: 4rem;
-}
-.page h3 {
-  margin-bottom: 1rem;
-}
-.page p {
-  max-width: 25ch;
-}
-.page img {
-  height: 200px;
-}
-.page .quote {
-  color: grey;
-}
-.page:nth-child(even) {
-  background-color: #eee;
-}
-
 footer {
   position: relative;
   background-color: #eee;
@@ -228,14 +207,50 @@ footer .bottom {
   flex-flow: row;
   justify-content: space-between;
   font-weight: 600;
+  padding-bottom: 1.5rem;
 }
 footer .top {
   padding: 2rem;
 }
 
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 4rem 1rem;
+}
+main h3 {
+  margin-bottom: 0.75rem;
+}
+main p {
+  max-width: 25ch;
+}
+main img {
+  height: 200px;
+}
+main .quote {
+  color: grey;
+}
+main:nth-child(even) {
+  background-color: #eee;
+}
+
+.welcome {
+  position: relative;
+}
 .welcome h2 {
+  max-width: 25ch;
   font-size: 1.25rem;
   color: #1a23fb;
+}
+.welcome img {
+  mix-blend-mode: multiply;
+  height: 150px;
+  position: absolute;
+  top: 25px;
+  right: -25px;
 }
 
 .team h1 {
@@ -289,6 +304,23 @@ footer .top {
   }
   header .bottom .center {
     margin-right: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main, .sampler-container {
+    border-radius: 10px;
+  }
+
+  footer {
+    overflow: hidden;
+    margin: 0 2rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 512px) {
+  footer {
+    padding-bottom: 2rem;
   }
 }
 

@@ -39,10 +39,12 @@ body
           //- a.link(href='http://www.instagram.com/campionocose' target='_blank') Scopri di pi&ugrave;
         img.one(src='img/mosaico-header2.png' alt='')
         img.two(src='img/mosaico-header.png' alt='')        
-    main.page.welcome    
-      h2 Creiamo musica coi tuoi suoni, campionandoli e usandoli come strumenti musicali. Scopri come.
-      //- img.hand(src='img/hand-div2.png' alt="A hand pointing at Campiono Cose's logo")
-    main.page
+    main.welcome    
+      div
+        h3 benvenuto
+        p Noi di CampionoCose creiamo musica inedita coi tuoi suoni, campionandoli e usandoli come strumenti musicali. Scopri come.
+      img.hand(src='img/hand-div2.png' alt="A hand pointing at Campiono Cose's logo")
+    main
       div
         h3 partecipa
         p
@@ -54,8 +56,8 @@ body
         h2 story
         //- h2 story
         //- img.hand-black(src='img/story-hand-black.png' alt="A hand pointing at Campiono Cose's Instagram story")
-        a(href="") invia su instagram
-    main.sampler-container#sampler
+        a(href="https://www.instagram.com/campionocose/") invia su instagram
+    .sampler-container#sampler
       #displayError.displayError.hide
         p#txtError.error
       .main
@@ -104,7 +106,7 @@ body
             br
             | Cose
             span.beta beta
-    //- main.page2
+    //- main2
       .section1
         h3 How To
         p Sei circondato da suoni, campionali tramite storia IG e tagga @campionocose. Noi ne faremo musica.
@@ -131,7 +133,7 @@ body
         main#video.video1
           iframe.yt-video.hide(width='560' height='315' src='https://www.youtube.com/embed/oSRgmqJhTu8' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='allowfullscreen')
           #play &#x25BA;
-    main.page
+    main
       img(src='img/press.png' alt='A bucket of ink and a pen representing the press')
       .section
         h3 stampa
@@ -141,7 +143,7 @@ body
           br
           br
         .quote grazia / il mattino
-    main.page
+    main
       .section
         h3 interviste
         p
@@ -151,7 +153,7 @@ body
           br
         .quote radio base
       img(src='img/on-air.png' alt='A picture of a microphone that says on air')
-    main.page.team
+    main.team
       h1
         | Chi
         br
