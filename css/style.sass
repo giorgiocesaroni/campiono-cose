@@ -96,6 +96,7 @@ header
 
     .hamburger
       mix-blend-mode: multiply
+      min-height: 45px
       max-height: 45px
       cursor: pointer
       padding: 0.25rem 0.75rem
@@ -175,6 +176,7 @@ header
       height: 9rem
 
 footer
+  width: 100%
   position: relative
   background-color: #eee
 
@@ -211,24 +213,36 @@ footer
     padding: 2rem
 
 main
+  position: relative
+  overflow: hidden
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(312px, 1fr))
   justify-items: center
   align-items: center
   gap: 2.5rem
   padding: 4rem 1rem
+  margin: 1rem 0
 
   h3
-    margin-bottom: .75rem
+    margin-bottom: 1rem
 
   p
     max-width: 25ch
 
+  blockquote
+    margin-top: .75rem
+    color: grey
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr))
+    gap: 1rem
+
+    img
+      margin-top: .75rem
+      opacity: .5
+      height: 1.25rem
+
   img
     height: 200px
-
-  .quote
-    color: grey
 
   &:nth-child(even)
     background-color: #eee
@@ -243,10 +257,19 @@ main
 
   img
     mix-blend-mode: multiply
-    height: 150px
+    min-height: 115px
+    max-height: 150px
+    height: 25vw
     position: absolute
     top: 25px
     right: -25px
+
+.instagram
+  color: $white245
+  background-color: rgb(17, 118, 201)
+
+  h3
+    color: $white245
 
 .team
   h1
@@ -308,10 +331,14 @@ main
 
   footer
     overflow: hidden
-    margin: 0 2rem
     border-top-left-radius: 10px
     border-top-right-radius: 10px
 
-  @media screen and (max-width: 512px)
-    footer
-      padding-bottom: 2rem
+@media screen and (max-width: 512px)
+  footer
+    padding-bottom: 2rem
+
+// break alternating sections
+@media screen and (max-width: 695px)
+  main > img
+    grid-row: 2

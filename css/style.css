@@ -97,6 +97,7 @@ header .top h1 {
 }
 header .top .hamburger {
   mix-blend-mode: multiply;
+  min-height: 45px;
   max-height: 45px;
   cursor: pointer;
   padding: 0.25rem 0.75rem;
@@ -177,6 +178,7 @@ header .bottom .two {
 }
 
 footer {
+  width: 100%;
   position: relative;
   background-color: #eee;
 }
@@ -214,24 +216,36 @@ footer .top {
 }
 
 main {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
   justify-items: center;
   align-items: center;
   gap: 2.5rem;
   padding: 4rem 1rem;
+  margin: 1rem 0;
 }
 main h3 {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 main p {
   max-width: 25ch;
 }
+main blockquote {
+  margin-top: 0.75rem;
+  color: grey;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 1rem;
+}
+main blockquote img {
+  margin-top: 0.75rem;
+  opacity: 0.5;
+  height: 1.25rem;
+}
 main img {
   height: 200px;
-}
-main .quote {
-  color: grey;
 }
 main:nth-child(even) {
   background-color: #eee;
@@ -247,10 +261,20 @@ main:nth-child(even) {
 }
 .welcome img {
   mix-blend-mode: multiply;
-  height: 150px;
+  min-height: 115px;
+  max-height: 150px;
+  height: 25vw;
   position: absolute;
   top: 25px;
   right: -25px;
+}
+
+.instagram {
+  color: whitesmoke;
+  background-color: #1176c9;
+}
+.instagram h3 {
+  color: whitesmoke;
 }
 
 .team h1 {
@@ -313,14 +337,18 @@ main:nth-child(even) {
 
   footer {
     overflow: hidden;
-    margin: 0 2rem;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 512px) {
+@media screen and (max-width: 512px) {
   footer {
     padding-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 695px) {
+  main > img {
+    grid-row: 2;
   }
 }
 
