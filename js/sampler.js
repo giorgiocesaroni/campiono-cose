@@ -83,6 +83,7 @@ function daw(control) {
     videos.classList.add("recordingState");
     return switchVideos("record");
   }
+
   if (control == "stop") {
     if (window.recorder.state == "recording") {
       window.recorder.stop();
@@ -93,13 +94,17 @@ function daw(control) {
     videos.classList.remove("recordingState", "playingState");
     switchVideos("stop");
   }
+
   if (control == "play") {
     if (window.recorder.state == "inactive" && storedVideo.src) {
       switchVideos("stop");
-      storedVideo.currentTime = 0;
-      audio.currentTime = 0;
-      audio.play();
+      storedVideo.currentTime = audio.currentTime = 0;
+      storedVideo.play();
+      setTimeout(() => {
+        audio.play();
+      }, 200);
     }
+
     if (window.recorder.state == "recording") {
       window.recorder.stop();
       switchVideos("stop");
@@ -288,7 +293,7 @@ buttons.addEventListener("click", (e) => {
 });
 
 storedVideo.onended = () => {
-  daw("play");
+  daw('stop');
 };
 
 btnMic.onclick = () => {
