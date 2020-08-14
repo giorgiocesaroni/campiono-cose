@@ -199,7 +199,6 @@ footer a {
   color: #fc29fc;
 }
 footer .row {
-  padding: 0.75rem 0.5rem 0.5rem 0.5rem;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -209,7 +208,7 @@ footer .bottom {
   flex-flow: row;
   justify-content: space-between;
   font-weight: 600;
-  padding-bottom: 1.5rem;
+  padding: 1rem;
 }
 footer .top {
   padding: 2rem;
@@ -339,11 +338,6 @@ main:nth-child(even) {
     overflow: hidden;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-  }
-}
-@media screen and (max-width: 512px) {
-  footer {
-    padding-bottom: 2rem;
   }
 }
 @media screen and (max-width: 695px) {
