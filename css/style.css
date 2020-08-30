@@ -65,6 +65,11 @@ h3 {
   color: #1a23fb;
 }
 
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 a:link, a:visited, a:hover {
   text-decoration: none;
   color: inherit;
@@ -268,9 +273,24 @@ main:nth-child(even) {
   right: -25px;
 }
 
+.tour h3 {
+  margin: 0;
+}
+.tour h4 {
+  color: grey;
+  margin-bottom: 1rem;
+}
+.tour ul {
+  margin: 1rem 0;
+}
+.tour .gifts {
+  display: flex;
+  align-items: center;
+}
+
 .instagram {
   color: whitesmoke;
-  background-color: #1176c9;
+  background-color: #1176c9 !important;
 }
 .instagram h3 {
   color: whitesmoke;
