@@ -6,8 +6,8 @@
 }
 @font-face {
   font-family: "agrandir";
-  src: url(../fonts/Agrandir/OTF/Agrandir-Bold.otf) format("opentype");
-  src: url(../fonts/Agrandir/TTF/Agrandir-Bold.ttf) format("truetype");
+  src: url(../fonts/Agrandir/OTF/Agrandir-Heavy.otf) format("opentype");
+  src: url(../fonts/Agrandir/TTF/Agrandir-Heavy.ttf) format("truetype");
   font-weight: 600;
 }
 @font-face {
@@ -42,6 +42,7 @@ html, body {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  padding-top: 45px;
 }
 
 .modal-open {
@@ -85,11 +86,11 @@ nav {
   overflow: hidden;
   visibility: hidden;
   width: 100%;
+  max-width: 1024px;
   height: 100%;
   z-index: 10;
   position: fixed;
   top: 0;
-  left: 0;
   display: none;
   background: whitesmoke;
   flex-flow: column;
@@ -98,7 +99,7 @@ nav {
 nav ul {
   width: 100%;
   height: 100%;
-  max-height: calc(100vh - 45px);
+  max-height: 512px;
   display: flex;
   flex-flow: column;
   justify-content: space-around;
@@ -120,8 +121,9 @@ nav ul a h2 {
   display: flex;
 }
 
-.wobble {
-  animation: wobble 2s infinite;
+.redbull {
+  height: 250px;
+  animation: shake 2s infinite;
 }
 
 @keyframes wobble {
@@ -132,7 +134,7 @@ nav ul a h2 {
     transform: rotate(10deg);
   }
 }
-header .top {
+header {
   z-index: 10;
   width: 100%;
   position: fixed;
@@ -142,7 +144,7 @@ header .top {
   left: 0;
   max-height: 45px;
 }
-header .top > div {
+header > div {
   width: 100%;
   max-width: 1024px;
   height: 100%;
@@ -155,7 +157,7 @@ header .top > div {
   transition: max-height 0.65s, background-color 0.65s;
   border-bottom: 1px solid rgba(245, 245, 245, 0.25);
 }
-header .top > div h1 {
+header > div h1 {
   mix-blend-mode: multiply;
   display: inline-block;
   text-transform: uppercase;
@@ -163,7 +165,7 @@ header .top > div h1 {
   font-weight: 900;
   margin: 0 0 -0.6rem 0.4rem;
 }
-header .top > div .hamburger {
+header > div .hamburger {
   mix-blend-mode: multiply;
   cursor: pointer;
   padding: 0.25rem 0.75rem;
@@ -171,31 +173,33 @@ header .top > div .hamburger {
   flex-flow: column;
   justify-content: space-evenly;
 }
-header .top > div .hamburger .line {
+header > div .hamburger .line {
   width: 1.5rem;
   height: 2px;
   background-color: #1a23fb;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
-header .bottom {
-  padding-top: 45px;
-  z-index: 3;
+
+.welcome {
   position: relative;
+  min-height: calc(312px);
+  z-index: 3;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 }
-header .bottom .title {
+.welcome .title {
   display: flex;
   flex-flow: column;
+  line-height: 1;
 }
-header .bottom .title h1 {
+.welcome .title h1 {
   margin: 0.25rem 0;
-  padding: 0 1.5rem 0 0.5rem;
+  padding: 0.45rem 0.5rem 0 0.25rem;
   align-self: flex-start;
   color: white;
   text-transform: uppercase;
@@ -203,8 +207,33 @@ header .bottom .title h1 {
   mix-blend-mode: multiply;
   opacity: 0.9;
 }
+.welcome img {
+  mix-blend-mode: multiply;
+  min-height: 115px;
+  max-height: 150px;
+}
+.welcome .hand-left {
+  position: absolute;
+  right: -1.5rem;
+  top: 10%;
+  height: 100px;
+  transform-origin: 100% 50%;
+  animation: shake 3s infinite ease;
+}
+.welcome .mic {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+}
 
+@keyframes shake {
+  50% {
+    transform: rotate(5deg);
+  }
+}
 footer {
+  margin-top: 1rem;
   width: 100%;
   position: relative;
   background-color: #eee;
@@ -221,6 +250,7 @@ footer .hand {
   height: 100px;
   top: 0.5rem;
   left: -1rem;
+  animation: shake 2s infinite;
 }
 footer a {
   color: #fc29fc;
@@ -243,14 +273,12 @@ footer .top {
 
 main {
   position: relative;
-  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
   justify-items: center;
   align-items: center;
   gap: 2.5rem;
   padding: 4rem 1rem;
-  margin: 1rem 0;
 }
 main h3 {
   margin-bottom: 1rem;
@@ -277,27 +305,9 @@ main:nth-child(even) {
   background-color: #eee;
 }
 
-.welcome {
-  position: relative;
-}
-.welcome h2 {
-  max-width: 25ch;
-  font-size: 1.25rem;
-  color: #1a23fb;
-}
-.welcome img {
-  mix-blend-mode: multiply;
-  min-height: 115px;
-  max-height: 150px;
-  height: 25vw;
-  position: absolute;
-  top: 25px;
-  right: -25px;
-}
-
 .tour {
   color: whitesmoke;
-  background: #1a23fb;
+  background: #1a23fb !important;
 }
 .tour h2 {
   color: whitesmoke;
@@ -313,11 +323,13 @@ main:nth-child(even) {
   margin-right: 2rem;
 }
 .tour div:nth-of-type(1) span:nth-of-type(1) h1 {
+  line-height: 1;
+  border-top: 0.45rem solid whitesmoke;
+  padding: 0 0.25rem;
   font-size: 2rem;
   color: #1a23fb;
   background: whitesmoke;
   margin: 0.25rem 0;
-  padding: 0 1.5rem 0 0.5rem;
 }
 .tour div:nth-of-type(1) span:nth-of-type(2) * {
   margin: 0;
@@ -325,16 +337,19 @@ main:nth-child(even) {
   color: #fc29fc;
 }
 .tour div:nth-of-type(1) span:nth-of-type(3) {
-  margin-top: -0.75rem;
+  margin-top: -0.5rem;
+  line-height: 1;
 }
 .tour div:nth-of-type(1) span:nth-of-type(3) * {
   margin: 0;
 }
+.tour div:nth-of-type(1) span:nth-of-type(3) h2 {
+  font-size: 1.5rem;
+}
 
 .gift {
   background: #fc29fc;
-  border-radius: 10px;
-  padding: 1rem;
+  padding: 2rem;
 }
 .gift * {
   color: white;
@@ -381,6 +396,7 @@ main:nth-child(even) {
 }
 .team .card p {
   color: grey;
+  font-weight: 400;
 }
 
 .story {
