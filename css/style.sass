@@ -75,9 +75,15 @@ h4
   font-weight: 600
   margin: .25rem 0
 
-a:link, a:visited, a:hover
+a:link
+  color: $cc-blue
   text-decoration: none
-  color: inherit
+
+a:visited
+  color: $cc-blue
+
+a:hover
+  text-decoration: underline
 
 nav
   padding-top: 45px
@@ -283,6 +289,14 @@ main
   gap: 2.5rem
   padding: 4rem 1rem
   // margin: 1rem 0
+
+  ul, ol
+    list-style-position: inside
+    max-width: 25ch
+    // line-height: 200%
+
+  ol
+    list-style: none
 
   h3
     margin-bottom: 1rem
